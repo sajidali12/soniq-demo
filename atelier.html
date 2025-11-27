@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier - Exact Theme Copy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;500;600&family=Newsreader:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Atelier Typography System */
+            --font-body--family: 'Red Hat Text', -apple-system, sans-serif;
+            --font-heading--family: 'Newsreader', serif;
+            --font-subheading--family: 'Newsreader', serif;
+            --font-accent--family: 'Red Hat Text', sans-serif;
+
+            /* Font Sizes (Atelier exact) */
+            --font-h1--size: 7.5rem; /* 120px */
+            --font-h2--size: 4.5rem; /* 72px */
+            --font-h3--size: 3rem; /* 48px */
+            --font-h4--size: 1.5rem; /* 24px */
+            --font-h5--size: 0.75rem; /* 12px */
+            --font-h6--size: 0.75rem; /* 12px */
+            --font-paragraph--size: 0.75rem; /* 12px */
+
+            /* Line Heights */
+            --font-h1--line-height: 1.05; /* display-tight */
+            --font-h2--line-height: 1.2;
+            --font-h3--line-height: 1.2;
+            --font-h4--line-height: 1.3;
+            --font-h5--line-height: 1.6; /* display-loose */
+            --font-h6--line-height: 1.6;
+            --font-paragraph--line-height: 1.6; /* body-loose */
+
+            /* Color Schemes */
+            --color-scheme-1-bg: #ffffff;
+            --color-scheme-1-fg: #000000;
+            --color-scheme-3-bg: #f2f2f2;
+            --color-scheme-5-bg: #000000;
+            --color-scheme-5-fg: #ffffff;
+            --color-scheme-6-bg: transparent;
+            --color-scheme-6-fg: #ffffff;
+
+            /* Button Colors */
+            --btn-primary-bg: #000000;
+            --btn-primary-text: #ffffff;
+            --btn-primary-hover-bg: #383838;
+
+            /* Borders */
+            --border-color: #e6e6e6;
+
+            /* Section Heights */
+            --section-height-large: 70svh;
+            --section-height-full: 100svh;
+
+            /* Transitions */
+            --hover-transition-duration: 0.25s;
+            --hover-transition-timing: ease-out;
+
+            /* Page Width */
+            --page-width: 120rem;
+            --page-padding: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body--family);
+            font-size: var(--font-paragraph--size);
+            line-height: var(--font-paragraph--line-height);
+            color: var(--color-scheme-1-fg);
+            background-color: var(--color-scheme-1-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading--family);
+            font-weight: 200;
+        }
+
+        h1 {
+            font-size: var(--font-h1--size);
+            line-height: var(--font-h1--line-height);
+        }
+
+        h2 {
+            font-size: var(--font-h2--size);
+            line-height: var(--font-h2--line-height);
+        }
+
+        h3 {
+            font-size: var(--font-h3--size);
+            line-height: var(--font-h3--line-height);
+        }
+
+        h4 {
+            font-family: var(--font-subheading--family);
+            font-size: var(--font-h4--size);
+            line-height: var(--font-h4--line-height);
+            font-weight: 200;
+        }
+
+        h5 {
+            font-family: var(--font-body--family);
+            font-size: var(--font-h5--size);
+            line-height: var(--font-h5--line-height);
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        h6 {
+            font-family: var(--font-body--family);
+            font-size: var(--font-h6--size);
+            line-height: var(--font-h6--line-height);
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity var(--hover-transition-duration) var(--hover-transition-timing);
+        }
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--color-scheme-1-bg);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            padding: 1.25rem var(--page-padding);
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-left a {
+            font-size: var(--font-h5--size);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+        }
+
+        .logo {
+            font-family: var(--font-heading--family);
+            font-size: 1.125rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .nav-right a {
+            font-size: var(--font-h5--size);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Hero Section 1 - Full Screen */
+        .hero-full {
+            min-height: var(--section-height-full);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-scheme-6-bg);
+            color: var(--color-scheme-6-fg);
+            overflow: hidden;
+            margin-top: 65px;
+        }
+
+        .hero-full::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+            z-index: 1;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--page-width);
+            padding: 0 var(--page-padding);
+            text-align: left;
+        }
+
+        .hero-full h1 {
+            max-width: 900px;
+        }
+
+        /* Collection Links Section */
+        /* Collection Links Section - Spotlight Layout */
+        .collection-links {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            padding: 5.125rem var(--page-padding);
+        }
+
+        .collection-links-component {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            grid-template-areas: 'text image';
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .collection-links__container {
+            grid-area: text;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .collection-links__link {
+            font-family: var(--font-heading--family);
+            font-weight: 200;
+            font-size: clamp(2.25rem, 4.5vw, 3.75rem); /* 36px to 60px */
+            line-height: 1.2;
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.3;
+            transition: opacity var(--hover-transition-duration) var(--hover-transition-timing);
+            cursor: pointer;
+        }
+
+        .collection-links__link:hover,
+        .collection-links__link.active {
+            opacity: 1;
+        }
+
+        .collection-links__link .text-block {
+            display: inline-block;
+            text-wrap: pretty;
+        }
+
+        .collection-links__count {
+            font-size: 0.5em;
+            opacity: 0.5;
+            font-family: var(--font-body--family);
+            font-weight: 400;
+        }
+
+        .collection-links__images {
+            grid-area: image;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+        }
+
+        .collection-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .collection-image.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        /* Featured Product Section */
+        .featured-product {
+            background-color: var(--color-scheme-3-bg);
+            padding: 0;
+        }
+
+        .product-layout {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 0 var(--page-padding);
+        }
+
+        .product-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-details {
+            padding: 2rem 0;
+        }
+
+        .product-details h5 {
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-image-main {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .swatch {
+            width: 18px;
+            height: 18px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: border-color var(--hover-transition-duration);
+        }
+
+        .swatch:hover {
+            border-color: #000;
+        }
+
+        /* Product List Section */
+        .product-list {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            padding: 5.25rem var(--page-padding) 6.25rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.25rem 1.625rem;
+        }
+
+        .product-card {
+            position: relative;
+            transition: transform var(--hover-transition-duration) var(--hover-transition-timing);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-card-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .product-info-left {
+            flex: 1;
+        }
+
+        .product-info-left h5 {
+            margin-bottom: 0.25rem;
+        }
+
+        .product-info-left .price {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .product-info-right {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Hero Section 2 - Large */
+        .hero-large {
+            min-height: var(--section-height-large);
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            background-color: var(--color-scheme-5-bg);
+            color: var(--color-scheme-5-fg);
+            overflow: hidden;
+        }
+
+        .hero-large::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+            z-index: 1;
+        }
+
+        .hero-large .hero-content {
+            max-width: var(--page-width);
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 var(--page-padding) 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .hero-large h2 {
+            max-width: 700px;
+        }
+
+        .hero-large h6 a {
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-scheme-1-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem var(--page-padding) 2rem;
+        }
+
+        .footer-content {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            font-size: var(--font-paragraph--size);
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: var(--font-h6--size);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            :root {
+                --font-h1--size: 4.5rem;
+                --font-h2--size: 3rem;
+                --font-h3--size: 2rem;
+            }
+
+            .collection-links-component,
+            .product-layout {
+                grid-template-columns: 1fr;
+                grid-template-areas: 'text' 'image';
+                gap: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-h1--size: 3rem;
+                --font-h2--size: 2rem;
+                --font-h3--size: 1.5rem;
+                --page-padding: 1.5rem;
+            }
+
+            .nav-left {
+                display: none;
+            }
+
+            nav {
+                grid-template-columns: auto 1fr auto;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#journal">Journal</a></li>
+            </ul>
+            <div class="logo">SONIQ</div>
+            <div class="nav-right">
+                <a href="#search">Search</a>
+                <a href="#account">Account</a>
+                <a href="#cart">Cart (0)</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section 1 - Full Screen -->
+    <section class="hero-full">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&h=1200&fit=crop" alt="SONIQ Audio Collection" class="hero-image">
+        <div class="hero-content">
+            <h1>Crafted<br>Sound</h1>
+        </div>
+    </section>
+
+    <!-- Collection Links Section - SONIQ Products Spotlight -->
+    <section class="collection-links" id="collection-links">
+        <div class="collection-links-component">
+            <div class="collection-links__container">
+                <a href="#anc-pro" class="collection-links__link active" data-index="0">
+                    <span class="text-block">Arolense</span>
+                </a>
+                <a href="#studio-elite" class="collection-links__link" data-index="1">
+                    <span class="text-block">Sona</span>
+                </a>
+                <a href="#wireless-lite" class="collection-links__link" data-index="2">
+                    <span class="text-block">Auralis</span>
+                </a>
+                <a href="#sport-buds" class="collection-links__link" data-index="3">
+                    <span class="text-block">Vibe</span>
+                </a>
+            </div>
+            <div class="collection-links__images">
+                <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_597,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ ANC Pro" class="collection-image active" data-image="0">
+                <img src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_501,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Studio Elite" class="collection-image" data-image="1">
+                <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_597,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ Wireless Lite" class="collection-image" data-image="2">
+                <img src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_501,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Sport Buds" class="collection-image" data-image="3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product Section -->
+    <section class="featured-product">
+        <div class="product-layout">
+            <div class="product-media">
+                <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_800,h_1000,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ ANC Pro" class="product-image-main">
+            </div>
+            <div class="product-details">
+                <h5>SONIQ ANC Pro</h5>
+                <p class="product-price">$299.99</p>
+                <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_600,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ ANC Pro Detail">
+                <div class="color-swatches">
+                    <div class="swatch" style="background-color: #000000;"></div>
+                    <div class="swatch" style="background-color: #ffffff;"></div>
+                    <div class="swatch" style="background-color: #bdf56f;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product List Section -->
+    <section class="product-list">
+        <div class="section-header">
+            <h4>Premium Collection</h4>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_400,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ ANC Pro" class="product-card-image">
+                <div class="product-card-info">
+                    <div class="product-info-left">
+                        <h5>SONIQ ANC Pro</h5>
+                        <p class="price">$299.99</p>
+                    </div>
+                    <div class="product-info-right">
+                        <div class="swatch" style="background-color: #000000;"></div>
+                        <div class="swatch" style="background-color: #bdf56f;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_400,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Studio Elite" class="product-card-image">
+                <div class="product-card-info">
+                    <div class="product-info-left">
+                        <h5>SONIQ Studio Elite</h5>
+                        <p class="price">$449.99</p>
+                    </div>
+                    <div class="product-info-right">
+                        <div class="swatch" style="background-color: #000000;"></div>
+                        <div class="swatch" style="background-color: #ffffff;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_400,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ Wireless Lite" class="product-card-image">
+                <div class="product-card-info">
+                    <div class="product-info-left">
+                        <h5>SONIQ Wireless Lite</h5>
+                        <p class="price">$199.99</p>
+                    </div>
+                    <div class="product-info-right">
+                        <div class="swatch" style="background-color: #ffffff;"></div>
+                        <div class="swatch" style="background-color: #bdf56f;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_400,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Sport Buds" class="product-card-image">
+                <div class="product-card-info">
+                    <div class="product-info-left">
+                        <h5>SONIQ Sport Buds</h5>
+                        <p class="price">$149.99</p>
+                    </div>
+                    <div class="product-info-right">
+                        <div class="swatch" style="background-color: #000000;"></div>
+                        <div class="swatch" style="background-color: #bdf56f;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 2 - Large -->
+    <section class="hero-large">
+        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1600&h=900&fit=crop" alt="Premium Audio Experience" class="hero-image">
+        <div class="hero-content">
+            <h2>Precision engineered for<br>audiophile-grade performance</h2>
+            <h6><a href="#shop">SHOP NOW</a></h6>
+        </div>
+    </section>
+
+    <script>
+        // Collection Links Interactive Behavior
+        const collectionLinks = document.querySelectorAll('.collection-links__link');
+        const collectionImages = document.querySelectorAll('.collection-image');
+
+        collectionLinks.forEach((link, index) => {
+            link.addEventListener('mouseenter', () => {
+                // Remove active class from all links and images
+                collectionLinks.forEach(l => l.classList.remove('active'));
+                collectionImages.forEach(img => img.classList.remove('active'));
+
+                // Add active class to current link and image
+                link.classList.add('active');
+                collectionImages[index].classList.add('active');
+            });
+
+            link.addEventListener('focus', () => {
+                collectionLinks.forEach(l => l.classList.remove('active'));
+                collectionImages.forEach(img => img.classList.remove('active'));
+
+                link.classList.add('active');
+                collectionImages[index].classList.add('active');
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h6>About</h6>
+                <ul>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h6>Customer Care</h6>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#shipping">Shipping</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h6>Follow Us</h6>
+                <ul>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#pinterest">Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h6>Newsletter</h6>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 SONIQ Audio. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

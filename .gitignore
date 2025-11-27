@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Except the demo files
+!index.html
+!atelier.html
+!boze.html
+!soniq-themed.html
+
+# Keep .gitignore itself
+!.gitignore
