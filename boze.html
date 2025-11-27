@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boze Theme - Premium Headphones</title>
+    <title>SONIQ Audio - Premium Headphones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             color: #1a1a1a;
             line-height: 1.6;
         }
@@ -27,11 +30,12 @@
         }
 
         .announcement-bar {
-            background: #251c21;
+            background: linear-gradient(135deg, #6bc645 0%, #7eda57 100%);
             color: #fff;
             text-align: center;
             padding: 10px;
             font-size: 13px;
+            font-weight: 500;
         }
 
         .nav-container {
@@ -44,10 +48,15 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            color: #251c21;
-            text-transform: lowercase;
+            color: #6bc645;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #7eda57;
         }
 
         .nav-menu {
@@ -66,7 +75,7 @@
         }
 
         .nav-menu a:hover {
-            color: #f46651;
+            color: #7eda57;
         }
 
         .nav-actions {
@@ -79,6 +88,7 @@
             text-decoration: none;
             color: #1a1a1a;
             font-size: 14px;
+            font-weight: 500;
         }
 
         .cart-icon {
@@ -90,7 +100,7 @@
             position: absolute;
             top: -8px;
             right: -8px;
-            background: #f46651;
+            background: #7eda57;
             color: #fff;
             border-radius: 50%;
             width: 18px;
@@ -99,6 +109,7 @@
             align-items: center;
             justify-content: center;
             font-size: 11px;
+            font-weight: 600;
         }
 
         /* Hero Section */
@@ -126,7 +137,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(15, 44, 207, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -140,27 +151,33 @@
         }
 
         .hero-content h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 700;
             margin-bottom: 30px;
             line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-primary {
-            background: #f46651;
+            background: #7eda57;
             color: #fff;
-            padding: 15px 40px;
+            padding: 16px 45px;
             border: none;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-primary:hover {
-            background: #e05540;
+            background: #6bc645;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(126, 218, 87, 0.4);
         }
 
         .hero-nav {
@@ -174,18 +191,21 @@
         }
 
         .hero-nav button {
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.9);
             border: none;
             width: 50px;
             height: 50px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 24px;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            color: #7eda57;
+            font-weight: 700;
         }
 
         .hero-nav button:hover {
             background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
         /* Section Styles */
@@ -197,10 +217,12 @@
 
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 700;
             margin-bottom: 50px;
-            color: #251c21;
+            color: #7eda57;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Product Grid */
@@ -220,8 +242,9 @@
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(126, 218, 87, 0.2);
+            border-color: #7eda57;
         }
 
         .product-image {
@@ -263,6 +286,12 @@
             cursor: pointer;
             z-index: 10;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .product-wishlist:hover {
+            background: #7eda57;
+            color: #fff;
         }
 
         .product-info {
@@ -272,14 +301,14 @@
         .product-title {
             font-size: 16px;
             margin-bottom: 10px;
-            color: #251c21;
-            font-weight: 500;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
         .product-price {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
-            color: #f46651;
+            color: #7eda57;
         }
 
         .product-actions {
@@ -290,23 +319,26 @@
 
         .btn-secondary {
             flex: 1;
-            background: #251c21;
+            background: #6bc645;
             color: #fff;
             padding: 12px;
             border: none;
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-secondary:hover {
-            background: #1a1a1a;
+            background: #7eda57;
+            transform: translateY(-2px);
         }
 
         .btn-quick-view {
             background: #f5f5f5;
-            color: #251c21;
+            color: #6bc645;
         }
 
         .btn-quick-view:hover {
@@ -329,7 +361,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #6bc645 0%, #7eda57 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -339,14 +371,15 @@
         .feature-icon svg {
             width: 40px;
             height: 40px;
-            fill: #f46651;
+            fill: #fff;
         }
 
         .feature-title {
             font-size: 20px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 10px;
-            color: #251c21;
+            color: #7eda57;
+            text-transform: uppercase;
         }
 
         .feature-text {
@@ -366,6 +399,13 @@
             background: #f9f9f9;
             padding: 40px;
             text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            border-color: #7eda57;
+            box-shadow: 0 10px 30px rgba(126, 218, 87, 0.15);
         }
 
         .category-card img {
@@ -377,7 +417,9 @@
         .category-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
-            color: #251c21;
+            color: #7eda57;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .category-card ul {
@@ -393,16 +435,18 @@
 
         .category-card li:before {
             content: "✓ ";
-            color: #f46651;
+            color: #7eda57;
             font-weight: bold;
             margin-right: 8px;
         }
 
         .link-shop {
-            color: #f46651;
+            color: #7eda57;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .link-shop:hover {
@@ -432,8 +476,10 @@
         .banner-content h2 {
             font-size: 48px;
             margin-bottom: 20px;
-            color: #251c21;
+            color: #7eda57;
             line-height: 1.2;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .banner-content p {
@@ -468,7 +514,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(83, 39, 152, 0.7);
+            background: linear-gradient(135deg, rgba(15, 44, 207, 0.85) 0%, rgba(47, 93, 255, 0.85) 100%);
         }
 
         .full-banner-content {
@@ -481,6 +527,8 @@
         .full-banner h2 {
             font-size: 56px;
             margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .full-banner p {
@@ -500,6 +548,11 @@
             padding: 30px;
             background: #f9f9f9;
             border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 30px rgba(126, 218, 87, 0.15);
         }
 
         .testimonial-avatar {
@@ -507,14 +560,14 @@
             height: 100px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, #f46651, #9655ff);
+            background: linear-gradient(135deg, #6bc645, #7eda57);
         }
 
         .testimonial-name {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 5px;
-            color: #251c21;
+            color: #7eda57;
         }
 
         .testimonial-role {
@@ -524,7 +577,7 @@
 
         /* Newsletter */
         .newsletter {
-            background: #251c21;
+            background: linear-gradient(135deg, #6bc645 0%, #7eda57 100%);
             color: #fff;
             padding: 80px 30px;
             text-align: center;
@@ -533,12 +586,14 @@
         .newsletter h2 {
             font-size: 42px;
             margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .newsletter p {
             font-size: 18px;
             margin-bottom: 30px;
-            color: #ccc;
+            opacity: 0.9;
         }
 
         .newsletter-form {
@@ -550,29 +605,33 @@
 
         .newsletter-form input {
             flex: 1;
-            padding: 15px 20px;
+            padding: 16px 20px;
             border: none;
             font-size: 16px;
+            font-family: 'Barlow', sans-serif;
         }
 
         .newsletter-form button {
-            background: #f46651;
-            color: #fff;
+            background: #fff;
+            color: #6bc645;
             border: none;
-            padding: 15px 40px;
+            padding: 16px 40px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .newsletter-form button:hover {
-            background: #e05540;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
         }
 
         /* Mission Section */
         .mission {
-            background: #9655ff;
+            background: #6bc645;
             color: #fff;
             padding: 80px 30px;
             text-align: center;
@@ -581,6 +640,8 @@
         .mission h2 {
             font-size: 42px;
             margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .mission p {
@@ -589,23 +650,27 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.9;
         }
 
         .btn-white {
             background: #fff;
-            color: #9655ff;
-            padding: 15px 40px;
+            color: #6bc645;
+            padding: 16px 45px;
             border: none;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-white:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
         }
 
         /* Support Features */
@@ -630,7 +695,7 @@
             width: 60px;
             height: 60px;
             margin: 0 auto 15px;
-            background: #f46651;
+            background: linear-gradient(135deg, #6bc645 0%, #7eda57 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -645,9 +710,10 @@
 
         .support-title {
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
-            color: #251c21;
+            color: #7eda57;
+            text-transform: uppercase;
         }
 
         .support-text {
@@ -657,7 +723,7 @@
 
         /* Footer */
         .footer {
-            background: #251c21;
+            background: #1a1a1a;
             color: #fff;
             padding: 60px 30px 30px;
         }
@@ -674,6 +740,9 @@
         .footer-section h3 {
             font-size: 18px;
             margin-bottom: 20px;
+            color: #7eda57;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .footer-section ul {
@@ -691,7 +760,7 @@
         }
 
         .footer-section a:hover {
-            color: #f46651;
+            color: #7eda57;
         }
 
         .footer-bottom {
@@ -713,7 +782,7 @@
             }
 
             .section-title {
-                font-size: 28px;
+                font-size: 32px;
             }
 
             .banner {
@@ -740,48 +809,28 @@
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
-
-        /* Carousel Controls */
-        .carousel-dots {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .carousel-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: #f46651;
-        }
     </style>
 </head>
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        Free shipping on orders over ₹500 | Shop now and save!
+        Free shipping on all orders | Premium audio quality guaranteed
     </div>
 
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo">boze theme</div>
+            <div class="logo">SON<span>IQ</span></div>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#catalog">Catalog</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
-                <a href="#login">Login</a>
+                <a href="#account">Account</a>
                 <div class="cart-icon">
                     🛒
                     <span class="cart-count">0</span>
@@ -795,7 +844,7 @@
         <div class="hero-slide active" style="background-image: url('https://boze-theme.myshopify.com/cdn/shop/files/slider1-bg_2000x.jpg?v=1614372408');">
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1>Refresh your state of mind</h1>
+                    <h1>Pure Sound. Pure Passion.</h1>
                     <button class="btn-primary">Shop Now</button>
                 </div>
             </div>
@@ -803,7 +852,7 @@
         <div class="hero-slide" style="background-image: url('https://boze-theme.myshopify.com/cdn/shop/files/slider2-bg_2000x.jpg?v=1614355816');">
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1>Fine quality fine engineering</h1>
+                    <h1>Engineered for Excellence</h1>
                     <button class="btn-primary">Discover More</button>
                 </div>
             </div>
@@ -811,7 +860,7 @@
         <div class="hero-slide" style="background-image: url('https://boze-theme.myshopify.com/cdn/shop/files/slider3-bg_2000x.jpg?v=1614355817');">
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1>Listen differently</h1>
+                    <h1>Experience the Difference</h1>
                     <button class="btn-primary">Explore</button>
                 </div>
             </div>
@@ -822,20 +871,20 @@
         </div>
     </section>
 
-    <!-- Latest Headphones -->
-    <section class="section">
-        <h2 class="section-title">Latest Headphones</h2>
+    <!-- Latest Products -->
+    <section class="section" id="products">
+        <h2 class="section-title">Our Products</h2>
         <div class="product-grid">
             <!-- Product Card 1 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-52_9437b4b1-02b6-4dc2-af44-c87bb82cf593.jpg?v=1599731508" alt="X2 Stereo">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-54_36804803-6ac6-42d7-a05d-3690f0026060.jpg?v=1599731508" alt="X2 Stereo">
+                    <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_597,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ ANC Pro">
+                    <img class="img-hover" src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_800,h_1000,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ ANC Pro">
                     <div class="product-wishlist">♡</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">X2 Stereo Headphones</h3>
-                    <p class="product-price">₹3,999</p>
+                    <h3 class="product-title">SONIQ ANC Pro</h3>
+                    <p class="product-price">$299</p>
                 </div>
                 <div class="product-actions">
                     <button class="btn-secondary">Add to Cart</button>
@@ -846,13 +895,13 @@
             <!-- Product Card 2 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-69_704862bf-b9c1-447a-9c43-c3ffb11f25ce.jpg?v=1599731591" alt="X2 Noise Isolated">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-71_4320b598-a1e7-477e-9e4f-df875bcf8513.jpg?v=1599731591" alt="X2 Noise Isolated">
+                    <img src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_501,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Studio Elite">
+                    <img class="img-hover" src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_501,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Studio Elite">
                     <div class="product-wishlist">♡</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">X2 Noise Isolated</h3>
-                    <p class="product-price">₹4,499</p>
+                    <h3 class="product-title">SONIQ Studio Elite</h3>
+                    <p class="product-price">$349</p>
                 </div>
                 <div class="product-actions">
                     <button class="btn-secondary">Add to Cart</button>
@@ -863,13 +912,13 @@
             <!-- Product Card 3 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-32_b0a2b2ba-1132-4817-8177-753d2f60949a.jpg?v=1599731478" alt="Wireless Headset">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-34_679ec680-9c79-4f23-9561-bb8deec0b80c.jpg?v=1599731478" alt="Wireless Headset">
+                    <img src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_597,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ Wireless Lite">
+                    <img class="img-hover" src="https://static.wixstatic.com/media/4215f4_3059d39ef50f4e579b1cba20be04fcf2~mv2.png/v1/fill/w_800,h_1000,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-8.png" alt="SONIQ Wireless Lite">
                     <div class="product-wishlist">♡</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Wireless Headset Pro</h3>
-                    <p class="product-price">₹5,999</p>
+                    <h3 class="product-title">SONIQ Wireless Lite</h3>
+                    <p class="product-price">$249</p>
                 </div>
                 <div class="product-actions">
                     <button class="btn-secondary">Add to Cart</button>
@@ -880,81 +929,13 @@
             <!-- Product Card 4 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-12_424cc3a3-c350-4ce8-b34d-d7310909d16a.jpg?v=1599731439" alt="Stereo Bass">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-14_654ae108-be89-4941-a160-a66f2e8d5a00.jpg?v=1599731439" alt="Stereo Bass">
+                    <img src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_501,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Sport Buds">
+                    <img class="img-hover" src="https://static.wixstatic.com/media/4215f4_3975bbc1acee4fadadeac42dc1b05af4~mv2.png/v1/fill/w_501,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design-6.png" alt="SONIQ Sport Buds">
                     <div class="product-wishlist">♡</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Stereo Bass Headphones</h3>
-                    <p class="product-price">₹2,499</p>
-                </div>
-                <div class="product-actions">
-                    <button class="btn-secondary">Add to Cart</button>
-                    <button class="btn-secondary btn-quick-view">Quick View</button>
-                </div>
-            </div>
-
-            <!-- Product Card 5 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-47_8ef385b8-8931-4b0c-a020-2a9266a1e329.jpg?v=1599731494" alt="Red Headset">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-49_b79e8490-1cfa-4004-bd37-1dd5f9ef2927.jpg?v=1599731494" alt="Red Headset">
-                    <div class="product-wishlist">♡</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Red Premium Headset</h3>
-                    <p class="product-price">₹3,299</p>
-                </div>
-                <div class="product-actions">
-                    <button class="btn-secondary">Add to Cart</button>
-                    <button class="btn-secondary btn-quick-view">Quick View</button>
-                </div>
-            </div>
-
-            <!-- Product Card 6 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-52_9437b4b1-02b6-4dc2-af44-c87bb82cf593.jpg?v=1599731508" alt="Premium Headphones">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-54_36804803-6ac6-42d7-a05d-3690f0026060.jpg?v=1599731508" alt="Premium Headphones">
-                    <div class="product-wishlist">♡</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Comfort Plus Wireless</h3>
-                    <p class="product-price">₹3,799</p>
-                </div>
-                <div class="product-actions">
-                    <button class="btn-secondary">Add to Cart</button>
-                    <button class="btn-secondary btn-quick-view">Quick View</button>
-                </div>
-            </div>
-
-            <!-- Product Card 7 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-69_704862bf-b9c1-447a-9c43-c3ffb11f25ce.jpg?v=1599731591" alt="Gaming Headset">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-71_4320b598-a1e7-477e-9e4f-df875bcf8513.jpg?v=1599731591" alt="Gaming Headset">
-                    <div class="product-wishlist">♡</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Gaming Pro Headset</h3>
-                    <p class="product-price">₹4,999</p>
-                </div>
-                <div class="product-actions">
-                    <button class="btn-secondary">Add to Cart</button>
-                    <button class="btn-secondary btn-quick-view">Quick View</button>
-                </div>
-            </div>
-
-            <!-- Product Card 8 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://boze-theme.myshopify.com/cdn/shop/products/shop-32_b0a2b2ba-1132-4817-8177-753d2f60949a.jpg?v=1599731478" alt="Portable Foldable">
-                    <img class="img-hover" src="https://boze-theme.myshopify.com/cdn/shop/products/shop-34_679ec680-9c79-4f23-9561-bb8deec0b80c.jpg?v=1599731478" alt="Portable Foldable">
-                    <div class="product-wishlist">♡</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Portable Foldable</h3>
-                    <p class="product-price">₹2,999</p>
+                    <h3 class="product-title">SONIQ Sport Buds</h3>
+                    <p class="product-price">$199</p>
                 </div>
                 <div class="product-actions">
                     <button class="btn-secondary">Add to Cart</button>
@@ -971,29 +952,29 @@
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
-                <h3 class="feature-title">Special Offers</h3>
-                <p class="feature-text">Get exclusive deals and discounts on premium headphones</p>
+                <h3 class="feature-title">Premium Quality</h3>
+                <p class="feature-text">Industry-leading audio components for superior sound</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
-                <h3 class="feature-title">Wireless</h3>
-                <p class="feature-text">Experience freedom with advanced wireless technology</p>
+                <h3 class="feature-title">True Wireless</h3>
+                <p class="feature-text">Advanced Bluetooth 5.3 technology for seamless connection</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                 </div>
-                <h3 class="feature-title">Noise Cancel</h3>
-                <p class="feature-text">Block out distractions with active noise cancellation</p>
+                <h3 class="feature-title">Active ANC</h3>
+                <p class="feature-text">Advanced noise cancellation for immersive listening</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
                 </div>
-                <h3 class="feature-title">Extra Bass</h3>
-                <p class="feature-text">Deep, powerful bass for immersive audio experience</p>
+                <h3 class="feature-title">Hi-Fi Sound</h3>
+                <p class="feature-text">Studio-grade audio with deep bass and crystal clarity</p>
             </div>
         </div>
     </section>
@@ -1002,46 +983,46 @@
     <section class="section">
         <div class="category-showcase">
             <div class="category-card">
-                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-1_700x.png?v=1614403093" alt="Cordless Headphones">
-                <h3>Cordless Headphones</h3>
+                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-1_700x.png?v=1614403093" alt="Premium Series">
+                <h3>Premium Series</h3>
                 <ul>
-                    <li>40+ hours battery life</li>
-                    <li>Fast charging support</li>
-                    <li>Premium sound quality</li>
-                    <li>Ergonomic design</li>
-                </ul>
-                <a href="#" class="link-shop">Shop Now →</a>
-            </div>
-            <div class="category-card">
-                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-2_9cf22e68-a674-4f38-9cb6-65d9413da477_700x.png?v=1614403095" alt="Wireless Headsets">
-                <h3>Wireless Headsets</h3>
-                <ul>
-                    <li>Bluetooth 5.0 technology</li>
-                    <li>Multi-device pairing</li>
-                    <li>Crystal clear calls</li>
-                    <li>Lightweight & comfortable</li>
-                </ul>
-                <a href="#" class="link-shop">Shop Now →</a>
-            </div>
-            <div class="category-card">
-                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-3_700x.png?v=1614403096" alt="Bluetooth Headsets">
-                <h3>Bluetooth Headsets</h3>
-                <ul>
-                    <li>Seamless connectivity</li>
-                    <li>Low latency audio</li>
-                    <li>Extended range</li>
-                    <li>Voice assistant ready</li>
-                </ul>
-                <a href="#" class="link-shop">Shop Now →</a>
-            </div>
-            <div class="category-card">
-                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-4_700x.png?v=1614403096" alt="Premium Collection">
-                <h3>Premium Collection</h3>
-                <ul>
-                    <li>Studio-grade audio</li>
+                    <li>50+ hours battery life</li>
+                    <li>Fast charge technology</li>
                     <li>Premium materials</li>
+                    <li>Flagship audio quality</li>
+                </ul>
+                <a href="#" class="link-shop">Shop Now →</a>
+            </div>
+            <div class="category-card">
+                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-2_9cf22e68-a674-4f38-9cb6-65d9413da477_700x.png?v=1614403095" alt="Wireless Collection">
+                <h3>Wireless Collection</h3>
+                <ul>
+                    <li>Bluetooth 5.3 enabled</li>
+                    <li>Multi-point connection</li>
+                    <li>Voice assistant ready</li>
+                    <li>All-day comfort</li>
+                </ul>
+                <a href="#" class="link-shop">Shop Now →</a>
+            </div>
+            <div class="category-card">
+                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-3_700x.png?v=1614403096" alt="Sport Series">
+                <h3>Sport Series</h3>
+                <ul>
+                    <li>Water resistant IPX7</li>
+                    <li>Secure-fit design</li>
+                    <li>Enhanced bass</li>
+                    <li>Quick pair technology</li>
+                </ul>
+                <a href="#" class="link-shop">Shop Now →</a>
+            </div>
+            <div class="category-card">
+                <img src="https://boze-theme.myshopify.com/cdn/shop/files/boze-4_700x.png?v=1614403096" alt="Studio Reference">
+                <h3>Studio Reference</h3>
+                <ul>
+                    <li>Professional-grade drivers</li>
                     <li>Hi-Res audio certified</li>
-                    <li>Professional quality</li>
+                    <li>Detachable cables</li>
+                    <li>Studio monitoring quality</li>
                 </ul>
                 <a href="#" class="link-shop">Shop Now →</a>
             </div>
@@ -1051,8 +1032,8 @@
     <!-- Banner 1 -->
     <div class="banner">
         <div class="banner-content">
-            <h2>Feel the unplugged</h2>
-            <p>Experience true wireless freedom with our latest collection of premium headphones designed for audiophiles and music lovers.</p>
+            <h2>Wireless Freedom</h2>
+            <p>Experience true audio liberation with our cutting-edge wireless technology. No compromises on sound quality, no limitations on movement.</p>
             <button class="btn-primary">Discover Collection</button>
         </div>
         <div class="banner-image">
@@ -1063,8 +1044,8 @@
     <!-- Full Width Banner -->
     <div class="full-banner" style="background-image: url('https://boze-theme.myshopify.com/cdn/shop/files/slider2-bg_2000x.jpg?v=1614355816');">
         <div class="full-banner-content">
-            <h2>Live life loud</h2>
-            <p>Immerse yourself in superior sound quality that brings your music to life</p>
+            <h2>Amplify Your Life</h2>
+            <p>Premium audio engineering meets modern design in every SONIQ product</p>
             <button class="btn-primary">Shop Now</button>
         </div>
     </div>
@@ -1072,8 +1053,8 @@
     <!-- Banner 2 -->
     <div class="banner reverse">
         <div class="banner-content">
-            <h2>Plug it, feel it</h2>
-            <p>Connect instantly and enjoy uninterrupted music all day long with advanced battery technology and fast charging.</p>
+            <h2>Studio Quality Sound</h2>
+            <p>Professional-grade audio components deliver studio-reference sound quality for the most discerning listeners. Hear every detail.</p>
             <button class="btn-primary">Learn More</button>
         </div>
         <div class="banner-image">
@@ -1087,51 +1068,51 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-avatar"></div>
-                <h4 class="testimonial-name">Sarah Johnson</h4>
-                <p class="testimonial-role">HR Specialist</p>
+                <h4 class="testimonial-name">Alex Thompson</h4>
+                <p class="testimonial-role">Audio Engineer</p>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
-                <h4 class="testimonial-name">Michael Chen</h4>
-                <p class="testimonial-role">Urban Planner</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
-                <h4 class="testimonial-name">Emma Williams</h4>
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7eda57, #6bc645);"></div>
+                <h4 class="testimonial-name">Maya Patel</h4>
                 <p class="testimonial-role">Product Designer</p>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #fa709a, #fee140);"></div>
-                <h4 class="testimonial-name">David Martinez</h4>
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #6bc645, #7eda57);"></div>
+                <h4 class="testimonial-name">Jordan Lee</h4>
+                <p class="testimonial-role">Sound Specialist</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7eda57, #6bc645);"></div>
+                <h4 class="testimonial-name">Sam Rivera</h4>
                 <p class="testimonial-role">Marketing Director</p>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #30cfd0, #330867);"></div>
-                <h4 class="testimonial-name">Lisa Anderson</h4>
-                <p class="testimonial-role">Sales Manager</p>
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #6bc645, #7eda57);"></div>
+                <h4 class="testimonial-name">Taylor Kim</h4>
+                <p class="testimonial-role">Customer Success</p>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #a8edea, #fed6e3);"></div>
-                <h4 class="testimonial-name">James Wilson</h4>
-                <p class="testimonial-role">Technical Lead</p>
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7eda57, #6bc645);"></div>
+                <h4 class="testimonial-name">Casey Morgan</h4>
+                <p class="testimonial-role">Quality Assurance</p>
             </div>
         </div>
     </section>
 
     <!-- Mission -->
-    <section class="mission">
+    <section class="mission" id="about">
         <h2>Our Mission</h2>
-        <p>We believe in delivering exceptional audio experiences that enhance your daily life. Our commitment to quality, innovation, and customer satisfaction drives everything we do.</p>
+        <p>At SONIQ, we're committed to delivering exceptional audio experiences through innovative technology and premium craftsmanship. Every product is engineered to exceed expectations and inspire through sound.</p>
         <a href="#" class="btn-white">Shop Now</a>
     </section>
 
     <!-- Newsletter -->
     <section class="newsletter">
-        <h2>In the zone. Every day</h2>
-        <p>Subscribe to our newsletter and get exclusive offers, product updates, and audio tips</p>
+        <h2>Stay Connected</h2>
+        <p>Join the SONIQ community and get exclusive access to new products, special offers, and audio insights</p>
         <form class="newsletter-form" onsubmit="return false;">
             <input type="email" placeholder="Enter your email address" required>
-            <button type="submit">SUBSCRIBE</button>
+            <button type="submit">Subscribe</button>
         </form>
     </section>
 
@@ -1143,55 +1124,55 @@
                     <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
                 </div>
                 <h4 class="support-title">Free Shipping</h4>
-                <p class="support-text">On orders over ₹500</p>
+                <p class="support-text">Free delivery on all orders</p>
             </div>
             <div class="support-item">
                 <div class="support-icon">
                     <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
                 </div>
-                <h4 class="support-title">Money Returns</h4>
-                <p class="support-text">30-day money-back guarantee</p>
+                <h4 class="support-title">Easy Returns</h4>
+                <p class="support-text">30-day hassle-free returns</p>
             </div>
             <div class="support-item">
                 <div class="support-icon">
                     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
                 </div>
-                <h4 class="support-title">Online Support</h4>
-                <p class="support-text">24/7 customer support</p>
+                <h4 class="support-title">24/7 Support</h4>
+                <p class="support-text">Expert assistance anytime</p>
             </div>
             <div class="support-item">
                 <div class="support-icon">
                     <svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
                 </div>
-                <h4 class="support-title">Deals & Promotions</h4>
-                <p class="support-text">Exclusive member offers</p>
+                <h4 class="support-title">Best Price</h4>
+                <p class="support-text">Price match guarantee</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About Us</h3>
-                <p style="color: #ccc;">Premium headphones for audiophiles and music lovers. Experience sound like never before.</p>
+                <h3>About SONIQ</h3>
+                <p style="color: #ccc;">Premium audio solutions for professionals and enthusiasts. Experience the SONIQ difference.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Customer Service</h3>
+                <h3>Support</h3>
                 <ul>
                     <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Returns Policy</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Support Center</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1205,7 +1186,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Boze Theme. All rights reserved.</p>
+            <p>&copy; 2025 SONIQ Audio. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1252,7 +1233,7 @@
         wishlistButtons.forEach(button => {
             button.addEventListener('click', function() {
                 this.innerHTML = this.innerHTML === '♡' ? '♥' : '♡';
-                this.style.color = this.innerHTML === '♥' ? '#f46651' : '#000';
+                this.style.color = this.innerHTML === '♥' ? '#7eda57' : '#000';
             });
         });
 
@@ -1262,7 +1243,7 @@
             button.addEventListener('click', function() {
                 const productCard = this.closest('.product-card');
                 const productTitle = productCard.querySelector('.product-title').textContent;
-                alert(`Quick View: ${productTitle}\n\nFeatures:\n• Premium sound quality\n• Wireless connectivity\n• Comfortable design\n• Long battery life`);
+                alert(`Quick View: ${productTitle}\n\nFeatures:\n• Premium audio drivers\n• Wireless connectivity\n• Active noise cancellation\n• 50+ hours battery life`);
             });
         });
 
@@ -1270,7 +1251,7 @@
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = this.querySelector('input').value;
-            alert(`Thank you for subscribing with: ${email}`);
+            alert(`Thank you for subscribing to SONIQ Audio!\n\nEmail: ${email}`);
             this.querySelector('input').value = '';
         });
 
